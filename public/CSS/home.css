@@ -1,0 +1,180 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.carousel-item {
+    height: 500px;
+    /* Set height for the carousel items */
+    background: #777;
+    /* Fallback color */
+    position: relative;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    /* Ensure images cover the area */
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.chatbox {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #343a40;
+    color: white;
+    /* position: relative; */
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+/* Container for cards */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Style each card */
+.card {
+    width: 30%;
+    margin: 10px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Card image */
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Card Body */
+.card-body {
+    padding: 15px;
+}
+
+/* Card Title */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Card Description */
+.card-text {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Text-muted */
+.text-muted {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #134B70;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Slider Section */
+.slider-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+/* Slider Container */
+.slider {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Flex for sliding items */
+.card-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Style for slider navigation buttons */
+.slider-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+
+    .slider-btn {
+        font-size: 1.5rem;
+    }
+}

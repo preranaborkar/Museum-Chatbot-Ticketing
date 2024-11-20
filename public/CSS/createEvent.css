@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+
+
+
+  /* Container Styling */
+.container {
+    max-width: 600px;
+    margin: 50px auto; /* Center the form vertically and horizontally */
+    background-color: #EEEEEE; /* Very Light Gray */
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block; /* Ensure the label is above the input */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #134B70; /* Deep Ocean Blue */
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #508C9B; /* Muted Teal */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #134B70; /* Highlight border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(19, 75, 112, 0.3); /* Add a subtle glow */
+  }
+  
+  .form-group textarea {
+    resize: none; /* Prevent resizing */
+  }
+  
+  /* Button Styling */
+  button[type="submit"] {
+    background-color: #134B70; /* Deep Ocean Blue */
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #201E43; /* Dark Space Blue */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px 20px;
+    }
+  
+    button[type="submit"] {
+      width: 100%; /* Full-width button for smaller screens */
+      font-size: 14px;
+    }
+  }
+  
+
+  
+/* header styling */
+
+  header {
+    background-color: #134B70; /* Deep Ocean Blue */
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+
+
+/* Footer styling */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #201E43; /* Dark Space Blue */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 10; /* Ensures the footer is above other content */
+  }
+  footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  footer ul li {
+    margin: 0 15px;
+  }
+  
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  footer ul li a:hover {
+    text-decoration: underline;
+  }

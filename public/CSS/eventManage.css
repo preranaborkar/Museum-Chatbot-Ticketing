@@ -1,0 +1,135 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color:  #508C9B;
+    margin: 0;
+    padding: 20px;
+   
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+   
+    background-color: #ffffff;
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    color: #333;
+    margin: 0;
+  }
+  
+  .create-event-btn {
+    padding: 10px 20px;
+    background-color: #201E43; 
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+ 
+  .create-event-btn::before {
+   
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
+  /* Table styling */
+  #eventTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #e9f7ef;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  #eventTable th,
+  #eventTable td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  #eventTable th {
+    background-color: #508C9B; ; 
+    color: white;
+    font-weight: bold;
+  }
+  
+ 
+
+
+  /* Styling action icons */
+.action-icons {
+  display: flex;
+  
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.action-icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+  
+ 
+  
+  
+
+/* Footer styling */
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #201E43; /* Dark Space Blue */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 10; /* Ensures the footer is above other content */
+  }
+  footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  footer ul li {
+    margin: 0 15px;
+  }
+  
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  footer ul li a:hover {
+    text-decoration: underline;
+  }

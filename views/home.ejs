@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+   <link rel="stylesheet" href="/CSS/home.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Indian Museum</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Exhibits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="museumCarousel" class="carousel slide mt-3" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://map.sahapedia.org/admin/assets/images/2021052319275589Sahapedia_Museums_sm.jpg?__imr__=bannerMuseum"
+                    class="d-block w-100" alt="Museum Image 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Explore Our Art Exhibits</h5>
+                    <p>Discover the beauty of art from various cultures.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1491156855053-9cdff72c7f85?q=80&w=1856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="d-block w-100" alt="Museum Image 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Historical Artifacts</h5>
+                    <p>Journey through time with our historical collections.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/69903/pexels-photo-69903.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    class="d-block w-100" alt="Museum Image 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Cultural Heritage</h5>
+                    <p>Learn about the rich cultural heritage of India.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#museumCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#museumCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Welcome to the Indian Museum</h1>
+        <p class="text-center">Book tickets and explore the museum with our virtual assistant.</p>
+    </div>
+
+
+
+<!-- Event Cards Section -->
+<div class="container">
+    <div class="card-container">
+        <% events.forEach(event => { %>
+            <div class="card shadow-lg">
+                <img src="<%= event.eventImage || '/uploads/images.jpeg' %>" class="card-img-top" alt="<%= event.eventName %>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= event.eventName %></h5>
+                    <p class="card-text"><%= event.eventDescription %></p>
+                    <p class="text-muted"><%= new Date(event.eventDate).toDateString() %>, <%= event.eventTime %></p>
+                    <p class="text-muted">Price: ₹<%= event.eventPrice %></p>
+                    <a href="/event/<%= event._id %>" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+
+    <!-- Chatbox -->
+    <div class="chatbox">
+        <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/fd149b69-e000-41a5-9513-24038c2e8ffd"></iframe></div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Indian Museum. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

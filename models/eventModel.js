@@ -25,6 +25,14 @@ const getEventById = async (eventId) => {
   }
 };
 
+const getEventByName = async (eventName) => {
+  try {
+    return await Event.findOne({ eventName: eventName }); // Searches by the eventName field
+  } catch (error) {
+    throw new Error('Error fetching event by name: ' + error.message);
+  }
+};
+
 
 const getAllEvents = async () => {
   try {
@@ -77,4 +85,5 @@ createEvent,
 getAllEvents,
 deleteEvent,
 updateEvent,
+getEventByName,
 }

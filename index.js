@@ -11,6 +11,9 @@ const homeRoutes = require('./routes/homeRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const eventRoutes=require('./routes/eventRoutes.js')
 
+const chatbotRoutes = require('./routes/chatbotRoutes');
+
+
 // // Set storage engine for file uploads
 // const storage = multer.diskStorage({
 //   destination: (req, file, cb) => {
@@ -71,7 +74,7 @@ app.use('/', homeRoutes);
 app.use('/', authRoutes);
 app.use('/', profileRoutes);
 app.use('/', eventRoutes);
-
+app.use('/', chatbotRoutes);
 
 
 // Logout Route

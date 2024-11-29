@@ -132,7 +132,7 @@ exports.bookTicket = async (req, res) => {
                 return res.json({
                     fulfillmentText: `An OTP has been sent to ${userSessionData.email}. Please enter the OTP to continue.`
                 });
-
+console.log("hi ");
           
 
     case 'Provide OTP':

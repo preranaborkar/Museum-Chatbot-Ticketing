@@ -57,7 +57,7 @@ exports.manageEvent = async (req, res) => {
   }
       const events = await eventModel.getAllEvents();
      
-    console.log("problem is here");
+    
   
       res.render('events/eventManage', { admin: req.session.admin, events });
     } catch (error) {

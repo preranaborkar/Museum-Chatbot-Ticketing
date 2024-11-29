@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    visitorType: { type: String, required: true }, // Example: Adult, Child, etc.
     createdAt: { type: Date, default: Date.now }
 });
 const User = mongoose.model('User', userSchema);
@@ -23,8 +22,8 @@ const ticketSchema = new mongoose.Schema({
 
 const Ticket = mongoose.model('Ticket', ticketSchema);
 
-const createUser = async (name, email, visitorType) => {
-    const newUser = new User({ name, email, visitorType });
+const createUser = async (name, email) => {
+    const newUser = new User({ name, email});
     try {
         await newUser.save();
         console.log('User created successfully:', newUser);
@@ -77,9 +76,12 @@ const deleteTicket = async (ticketId) => {
 };
 
 
+
 module.exports = {
     createUser,
     getUserBookings,
     getEventBookings,
-    deleteTicket
+    deleteTicket,
+    User,
+    createTicket
 }

@@ -9,8 +9,7 @@ const multer = require('multer');
 const authRoutes = require('./routes/authRoutes.js');
 const homeRoutes = require('./routes/homeRoutes');
 const profileRoutes = require('./routes/profileRoutes');
-const eventRoutes=require('./routes/eventRoutes.js')
-
+const eventRoutes=require('./routes/eventRoutes.js');
 const chatbotRoutes = require('./routes/chatbotRoutes');
 
 

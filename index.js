@@ -12,6 +12,15 @@ const profileRoutes = require('./routes/profileRoutes');
 const eventRoutes=require('./routes/eventRoutes.js');
 const chatbotRoutes = require('./routes/chatbotRoutes');
 
+const cors = require('cors');
+app.use(cors());
+
+// app.use(cors({
+//     origin: 'https://your-frontend.vercel.app', // Allow requests from Vercel
+//     methods: 'GET,POST,PUT,DELETE',
+//     credentials: true // Include cookies if needed
+// }));
+
 
 // // Set storage engine for file uploads
 // const storage = multer.diskStorage({

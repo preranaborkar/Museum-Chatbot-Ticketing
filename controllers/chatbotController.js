@@ -1,5 +1,5 @@
 const eventModel = require('../models/eventModel');
-const chatbotModel=require('../models/chtabotModel');
+const chatbotModel=require('../models/chatbotModel');
 const nodemailer = require("nodemailer");
 const crypto = require('crypto');  // To generate OTP
 let otpStore = {}; 
@@ -12,6 +12,7 @@ const emailPassword = process.env.EMAIL_PASSWORD;
 
 // const userSessionData = req.session || {};
 let userSessionData = {};
+let tempTicketData = {};
 
 exports.bookTicket = async (req, res) => {
     const intent = req.body.queryResult?.intent?.displayName; 
@@ -21,6 +22,55 @@ exports.bookTicket = async (req, res) => {
 
  try {
    switch(intent){
+    case 'Cancel Ticket':
+        console.log("cancel ticket intent");
+        break;
+
+  // Step 1: User provides the ticket ID
+  case 'Provide TicketId':
+      console.log("provide ticketid intent");
+      const ticketId = parameters.ticketid;
+      console.log("Received Ticket ID:", ticketId);
+
+      // Validate if the ticket ID exists in the database
+      const ticket = await chatbotModel.Ticket.findOne({ _id: ticketId });
+
+      if (!ticket) {
+          return res.json({
+              fulfillmentText: `No ticket found with ID ${ticketId}. Please provide a valid ticket ID.`
+          });
+      }
+
+      // Store the ticket temporarily for confirmation step
+      tempTicketData = ticket;
+      return res.json({
+          fulfillmentText: `I found your ticket with ID ${ticketId}. Would you like to confirm the cancellation?`
+      });
+      break;
+  // Step 2: User confirms cancellation
+  case 'Confirm Cancel':
+      
+          console.log("cancle confirm");
+          console.log(tempTicketData);
+          const ticketdata = await chatbotModel.Ticket.findById(tempTicketData._id); 
+          if (!ticketdata) {
+            return res.json({
+                fulfillmentText: `Ticket with ID ${tempTicketData._id} not found. Please try again.`
+            });
+        }
+         
+        ticketdata.status = 'cancelled';
+          await ticketdata.save();
+          console.log(ticketdata);
+          console.log("Ticket cancelled successfully.");
+
+          tempTicketData={};
+          return res.json({
+              fulfillmentText: `Your ticket with ID ${tempTicketData._id} has been successfully cancelled.`
+          });
+         
+
+          break;
 
     case 'Provide Date':
         const today = new Date(); 
@@ -213,8 +263,8 @@ console.log("hi ");
         const eventData = await eventModel.Event.findById(userSessionData.eventId);
         // Generate the PDF
         const pdfFilePath = await ticketController.generateTicketPDF(user, eventData, ticket);
-// Send the PDF via email
-await ticketController.sendEmailWithAttachment(userSessionData.email, pdfFilePath);
+          // Send the PDF via email
+           await ticketController.sendEmailWithAttachment(userSessionData.email, pdfFilePath);
 
         // Respond with a confirmation message
         return res.json({
@@ -230,9 +280,9 @@ await ticketController.sendEmailWithAttachment(userSessionData.email, pdfFilePat
              
 
     
-    default:
-        console.log("No matching intent found.");
-             break;
+    // default:
+    //     console.log("No matching intent found.");
+    //          break;
     
    }
    // Send an empty response back to Dialogflow
@@ -275,6 +325,4 @@ const sendOtpEmail = async (email, otp) => {
 
     console.log("Message sent: %s", info.messageId);
 };
-
-
-
+           

@@ -28,6 +28,7 @@ const generateTicketPDF = async (userData, eventData, ticketData) => {
     doc.text(`Date: ${eventData.eventDate}`);
     doc.text(`Tickets Booked: ${ticketData.quantity}`);
     doc.text(`Booking Date: ${ticketData.bookingDate}`);
+    doc.text(`Booking status: ${ticketData.status}`);
   
     
     // Generate and embed QR code

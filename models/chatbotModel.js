@@ -83,5 +83,6 @@ module.exports = {
     getEventBookings,
     deleteTicket,
     User,
-    createTicket
+    createTicket,
+    Ticket
 }

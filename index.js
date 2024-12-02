@@ -11,15 +11,15 @@ const homeRoutes = require('./routes/homeRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const eventRoutes=require('./routes/eventRoutes.js');
 const chatbotRoutes = require('./routes/chatbotRoutes');
+const app = express();
+
 
 const cors = require('cors');
-app.use(cors());
-
-// app.use(cors({
-//     origin: 'https://your-frontend.vercel.app', // Allow requests from Vercel
-//     methods: 'GET,POST,PUT,DELETE',
-//     credentials: true // Include cookies if needed
-// }));
+app.use(cors({
+    origin: 'https://your-frontend.vercel.app', // Replace with your actual frontend URL on Vercel
+    methods: 'GET, POST, PUT, DELETE',
+    credentials: true // Allow cookies to be sent, if needed
+}));
 
 
 // // Set storage engine for file uploads
@@ -38,7 +38,7 @@ app.use(cors());
 
 
 const connectDB = require('./config/db');
-const app = express();
+
 const PORT = process.env.PORT || 3000;
 dotenv.config();
 
@@ -69,7 +69,7 @@ app.use(session({
   secret: 'your-secret-key',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false }
+  cookie: { secure: process.env.NODE_ENV === 'production' } 
 }));
 
 

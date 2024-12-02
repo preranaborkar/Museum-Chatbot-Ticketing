@@ -17,6 +17,6 @@ router.get('/login', (req, res) => {
 })
 
 // Handle login form submission
-router.post('/login', authController.loginUser);
+router.post('https://museum-chatbot-ticketing.onrender.com/login', authController.loginUser);
 
 module.exports = router;

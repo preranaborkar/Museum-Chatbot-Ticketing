@@ -27,7 +27,7 @@
                         <a class="nav-link" href="#">Exhibits</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">Admin</a>
+                        <a class="nav-link" href="https://museum-chatbot-ticketing.onrender.com/login">Admin</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact Us</a>
@@ -92,7 +92,7 @@
                     <p class="card-text"><%= event.eventDescription %></p>
                     <p class="text-muted"><%= new Date(event.eventDate).toDateString() %>, <%= event.eventTime %></p>
                     <p class="text-muted">Price: ₹<%= event.eventPrice %></p>
-                    <a href="/event/<%= event._id %>" class="btn btn-primary">View Details</a>
+                    <a href="https://museum-chatbot-ticketing.onrender.com/event/<%= event._id %>" class="btn btn-primary">View Details</a>
                 </div>
             </div>
         <% }); %>

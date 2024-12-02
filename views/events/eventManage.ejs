@@ -54,10 +54,10 @@
 </td>
 <td><%= event.eventDescription %></td>
 <td>
-  <form action="/events/delete/<%= event._id %>" method="POST">
+  <form action="https://museum-chatbot-ticketing.onrender.com/events/delete/<%= event._id %>" method="POST">
     <button type="submit">Delete</button>
   </form>
-  <a href="/events/update/<%= event._id %>" class="update-btn">Update</a>
+  <a href="https://museum-chatbot-ticketing.onrender.com/events/update/<%= event._id %>" class="update-btn">Update</a>
 </td>
         </tr>
         <% }) %>

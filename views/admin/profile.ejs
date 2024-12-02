@@ -31,7 +31,7 @@
       
       <div class="profile-details">
         <h2><%= admin.name || 'No Name Provided' %></h2>
-        <form action="/admin/<%= admin._id %>/profile" method="POST"  id="profileForm">
+        <form action="https://museum-chatbot-ticketing.onrender.com/admin/<%= admin._id %>/profile" method="POST"  id="profileForm">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" value="<%= admin.name || '' %>" readonly required>
           

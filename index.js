@@ -15,11 +15,12 @@ const app = express();
 
 
 const cors = require('cors');
-app.use(cors({
-    origin: 'https://museum-chatbot-ticketing.vercel.app/', // Replace with your actual frontend URL on Vercel
-    methods: 'GET, POST, PUT, DELETE',
-    credentials: true // Allow cookies to be sent, if needed
-}));
+app.use(cors());
+// app.use(cors({
+//     origin: 'https://museum-chatbot-ticketing.vercel.app/', // Replace with your actual frontend URL on Vercel
+//     methods: 'GET, POST, PUT, DELETE',
+//     credentials: true // Allow cookies to be sent, if needed
+// }));
 
 
 // // Set storage engine for file uploads

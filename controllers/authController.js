@@ -60,7 +60,7 @@ const loginUser = async (req, res) => {
 
     req.session.admin = { adminId: admin._id, name: admin.name, email: admin.email ,username: admin.username};
     // res.send('Login successful');
-    res.redirect(`/admin/${admin._id}/profile`);
+    res.redirect(`https://museum-chatbot-ticketing.onrender.com/admin/${admin._id}/profile`);
   } catch (err) {
     return res.render('auth/login', { error: 'Error logging in: ' + err.message });
   }

@@ -34,10 +34,10 @@
       <tbody>
         <% bookings.forEach(booking => { %>
           <tr>
-            <td><%= booking.userId.name %></td>
-            <td><%= booking.userId.email %></td>
-            <td><%= booking.eventId.eventName %></td>
-            <td><%= booking.bookingDate.toDateString() %></td>
+            <td><%= booking.userName %></td>
+            <td><%= booking.email %></td>
+            <td><%= booking.eventName %></td>
+            <td><%= new Date(booking.bookingDate).toDateString() %></td>
             <td><%= booking.quantity %></td>
             <td><%= booking.status %></td>
           </tr>

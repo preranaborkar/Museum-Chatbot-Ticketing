@@ -20,7 +20,17 @@ exports.getBookingDetails = async (req, res) => {
     // Get all bookings
     const bookings = await TicketModel.Ticket.find().populate('userId').populate('eventId');
     
-    res.render('admin/bookingDetails', { admin, bookings });
+    const processedBookings = bookings.map((booking) => ({
+      userName: booking.userId ? booking.userId.name : 'Unknown User',
+      email: booking.userId ? booking.userId.email : 'No Email',
+      eventName: booking.eventId ? booking.eventId.eventName : 'Event Deleted',
+      bookingDate: booking.bookingDate,
+      quantity: booking.quantity,
+      status: booking.status,
+    }));
+
+
+    res.render('admin/bookingDetails', { admin, bookings: processedBookings });
   } catch (error) {
     console.error('Error fetching booking details:', error);
     res.status(500).send('Internal Server Error');

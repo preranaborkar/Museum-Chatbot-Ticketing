@@ -11,13 +11,13 @@
   
 
   
-  <div class="container">
+  
     
     <header>
       <h1>Event Management</h1>
-      <a href="/events/createEvent" class="create-event-btn">&#x2795; Create Event</a>
+      <a href="https://museum-chatbot-ticketing.onrender.com/events/createEvent" class="create-event-btn">&#x2795; Create Event</a>
     </header>
-
+    <div class="container">
     <table id="eventTable">
       <thead>
         <tr>
@@ -56,8 +56,8 @@
 <td>
   <form action="https://museum-chatbot-ticketing.onrender.com/events/delete/<%= event._id %>" method="POST">
     <button type="submit">Delete</button>
-  </form>
-  <a href="https://museum-chatbot-ticketing.onrender.com/events/update/<%= event._id %>" class="update-btn">Update</a>
+  </form><br>
+  <a href="ehttps://museum-chatbot-ticketing.onrender.com/vents/update/<%= event._id %>" class="update-btn">Update</a>
 </td>
         </tr>
         <% }) %>

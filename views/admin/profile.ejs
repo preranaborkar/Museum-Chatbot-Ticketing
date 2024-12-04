@@ -12,14 +12,14 @@
   <header>
     <nav>
       <ul>
-        <button class="custom-button"> <a href="/admin/<%= admin._id %>/bookingDetails">View Booking Details</a></button>
+        <li> <a href="https://museum-chatbot-ticketing.onrender.com/admin/<%= admin._id %>/bookingDetails">View Booking Details</a></li>
 
-        <button class="custom-button"> <a href="/events/eventManage">Manage Events</a>  </button>
-        <button class="custom-button"> <a href="/events/createEvent">Create Events</a>  </button>
+        <li> <a href="https://museum-chatbot-ticketing.onrender.com/events/eventManage">Manage Events</a> </li>
+       <li> <a href="https://museum-chatbot-ticketing.onrender.com/events/createEvent">Create Events</a> </li>
 
-        <li><div class="profile-icon" onclick="toggleProfileBox()"><i class="fas fa-user"></i></div></li>
+        <!-- <li><div class="profile-icon" onclick="toggleProfileBox()"><i class="fas fa-user"></i></div></li> -->
        
-        <li><a href="/admin/<%= admin._id %>/profile">Profile</a></li>
+        <li><a href="https://museum-chatbot-ticketing.onrender.com/admin/<%= admin._id %>/profile">Profile</a></li>
         <li><a href="/">Home</a></li>
         <li><a href="/logout" class="logout-button">Logout</a></li>
       </ul>
@@ -43,8 +43,8 @@
           
           <label for="about_me">About Me:</label>
           <textarea id="about_me" name="about_me" readonly><%= admin.about_me || 'Tell us about yourself' %></textarea>
-          
-          <label for="address">Address :</label>
+        
+          <label for="address">Address:</label>
           <textarea id="address" name="address" readonly><%= admin.address || '' %></textarea>
           
           <div class="buttons">
@@ -80,7 +80,7 @@
         credentials: 'include', // Ensures cookies are sent with the request
     }).then(() => {
         // Redirect to home page
-        window.location.href = '/';
+        window.location.href = 'https://museum-chatbot-ticketing.onrender.com/';
     });
 });
 
